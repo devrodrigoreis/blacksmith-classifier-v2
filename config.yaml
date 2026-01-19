@@ -1,0 +1,61 @@
+api:
+  host: "0.0.0.0"
+  port: 8080
+  reload: false
+  workers: 4
+  cors_origins: ["*"]
+  model_path: "models"
+  label_encoder_path: "models/category_encoder.joblib"
+
+memory:
+  max_memory_percent: 90
+  memory_check_interval: 1
+
+training:
+  output_dir: './results'
+  model_name: 'neuralmind/bert-base-portuguese-cased'
+  num_train_epochs: 10
+  # Optimized for RTX 4060 Ti 16GB
+  per_device_train_batch_size: 24   # Valid balance for 256 context
+  per_device_eval_batch_size: 32
+  gradient_accumulation_steps: 2    # Effective batch size ~48
+  warmup_steps: 500
+  weight_decay: 0.01
+  logging_dir: './logs'
+  logging_steps: 10
+  eval_strategy: 'epoch'
+  save_strategy: 'epoch'
+  save_total_limit: 1
+  load_best_model_at_end: True
+  metric_for_best_model: 'f1'
+  
+  # Hardware Optimization
+  fp16: False         # Disable FP16
+  bf16: True          # Enable BFloat16 (Supported by 40-series/Ada Lovelace)
+  fp16_opt_level: 'O2'
+  dataloader_num_workers: 4 # Reduced from CPU_COUNT effectively to avoid overhead
+
+models:
+  bert:
+    model_name: "neuralmind/bert-base-portuguese-cased"  
+    model_path: "models"
+    label_encoder_path: "category_encoder.joblib"
+    confidence_threshold: 0.7
+    max_length: 256  # INCREASED from 32/64 to utilize descriptions
+  fallback:
+    model_path: "models/fallback_model.bin"
+    tokenizer_path: "models"
+    label_encoder_path: "fallback_category_encoder.joblib"
+    max_length: 256
+
+data:
+  products_file:   "data/products_train_unique.csv"
+  categories_file: "data/categories.csv"
+  # Explicit paths logic will check these
+  train_split: "data/products_train_unique.csv"
+  eval_split: "data/products_eval_unique.csv"
+  details_file: "data/products_with_descriptions.csv"
+
+logging:
+  level: "INFO"
+  file: "api.log"

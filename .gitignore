@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.env
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Large data and models
+bert_model/
+fine_tuned_model/
+checkpoints/
+results/
+model_backup/
+models/
+*.bin
+*.pth
+*.safetensors
+*.zip
+*.joblib
+
+# Data
+data/
+datasets/
+
+# Backups
+_legacy_backup/
+_legacy_backup/

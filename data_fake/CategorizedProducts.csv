@@ -1,0 +1,21 @@
+product_id,product_name,category_name,category_id,confidence,model
+7911,Flex Glue 4653,Tools>>Power>>Professional,1.6.9,0.8333143838758462,fallback
+86351,Mega Drill 4246,Gardening>>Accessories>>Advanced,4.10.6,0.9230207737791765,fallback
+20120,Flex Hammer 8059,Gardening>>Manual>>Professional,5.8.7,0.9694105409658431,fallback
+4241,Eco Saw 8518,Electrical>>Manual>>Basic,7.3.8,0.8063722528343134,fallback
+5813,Eco Tape 1166,Construction>>Safety>>Industrial,8.4.6,0.8475587129408371,fallback
+52510,Smart Tape 1130,Electrical>>Power>>Professional,3.4.7,0.8275255188912889,fallback
+42005,Smart Glue 3106,Gardening>>Manual>>Professional,5.8.7,0.8381581718042191,fallback
+31889,Pro Ladder 8705,Plumbing>>Accessories>>Industrial,10.7.10,0.8864814736762673,fallback
+75505,Ultra Tape 1826,Tools>>Power>>Professional,1.6.9,0.8193144975575422,fallback
+11274,Mega Tape 6648,Tools>>Accessories>>Professional,3.10.1,0.9513338013203627,fallback
+31511,Super Pump 3412,Electrical>>Manual>>Basic,7.3.8,0.8555253532189944,fallback
+4707,Eco Hammer 8261,Gardening>>Accessories>>Advanced,4.10.6,0.8271984873951505,fallback
+17832,Super Saw 2722,Plumbing>>Safety>>Basic,9.10.8,0.8431066764005071,fallback
+91766,Super Pump 7570,Construction>>Power>>Home,6.4.10,0.9800032668574872,fallback
+83440,Pro Saw 3790,Electrical>>Manual>>Basic,7.3.8,0.8586067494347261,fallback
+83751,Pro Ladder 8987,Electrical>>Power>>Professional,3.4.7,0.8152197271660536,fallback
+51836,Super Ladder 5653,Construction>>Safety>>Industrial,8.4.6,0.8590590206417388,fallback
+92766,Super Drill 4234,Plumbing>>Manual>>Advanced,3.9.8,0.8843038192589612,fallback
+35287,Super Tape 8767,Electrical>>Power>>Professional,2.1.6,0.9291970659905213,fallback
+33605,Smart Glue 2002,Plumbing>>Safety>>Basic,9.10.8,0.9130779978957874,fallback

@@ -1,0 +1,14 @@
+Flask
+fastapi
+uvicorn
+pydantic
+torch
+transformers
+nltk
+scikit-learn
+imbalanced-learn
+joblib
+pandas
+numpy
+psutil
+python-multipart

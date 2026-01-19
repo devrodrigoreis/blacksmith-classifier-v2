@@ -1,0 +1,28 @@
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false
+  workers: 4
+  cors_origins: ["*"]
+  model_path: "models"  # Add this line to match what your code expects
+  label_encoder_path: "models/bert_category_encoder.joblib"  # Add this line to match what your code expects
+
+models:
+  bert:
+    model_path: "models"  
+    label_encoder_path: "models/bert_category_encoder.joblib"  
+    confidence_threshold: 0.7
+    max_length: 64
+  
+  fallback:
+    model_path: "models/fallback_model.bin"
+    tokenizer_path: "fallback_tokenizer.joblib"
+    label_encoder_path: "fallback_label_encoder.joblib"
+    max_length: 128
+
+data:
+  categories_file: "data/categories.csv"
+
+logging:
+  level: "INFO"
+  file: "api.log"
