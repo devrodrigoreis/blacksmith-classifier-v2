@@ -2,7 +2,7 @@
 
 This project implements a BERT-based product classifier organized into a modular Python package. It supports standard training using Hugging Face Transformers and a custom fallback training loop.
 
-## 🚀 Setup & Installation
+## Setup and Installation
 
 ### 1. Prerequisites
 - Python 3.8+
@@ -26,9 +26,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-> **Note**: If `requirements.txt` is missing, ensure you have: `torch`, `transformers`, `scikit-learn`, `imbalanced-learn`, `pandas`, `numpy`, `pyyaml`.
+> **Note**: If `requirements.txt` is missing, ensure the following packages are installed: `torch`, `transformers`, `scikit-learn`, `imbalanced-learn`, `pandas`, `numpy`, `pyyaml`.
 
-## ⚙️ Configuration
+## Configuration
 
 The project is configured via `config.yaml`. 
 
@@ -37,7 +37,7 @@ The default configuration is optimized for an **NVIDIA RTX 4060 Ti (16GB)**. If 
 
 - **VRAM < 12GB**: Reduce `per_device_train_batch_size` to `8` or `16`. Reduce `max_length` to `128` or `64`.
 - **Non-NVIDIA 40-series**: Set `bf16: False` and `fp16: True` (standard mixed precision).
-- **CPU Only**: Training will be extremely slow. Set `use_cpu: True` (if supported) or ensure CUDA logic handles it implies CPU.
+- **CPU Only**: Training will be significantly slower. Set `use_cpu: True` (if supported) or ensure CUDA logic implies CPU usage.
 
 ```yaml
 training:
@@ -46,7 +46,7 @@ training:
   fp16: False                      # Set True if disabling bf16
 ```
 
-## 🏃 Usage
+## Usage
 
 The project uses a unified CLI `cli.py` for all operations.
 
@@ -64,7 +64,7 @@ Uses a custom PyTorch training loop (legacy/debugging).
 python cli.py train --mode fallback
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -82,7 +82,7 @@ python cli.py train --mode fallback
 └── logs/                   # Training logs
 ```
 
-## ❓ Troubleshooting
+## Troubleshooting
 
 - **OOM (Out of Memory)**: Reduce `per_device_train_batch_size` in `config.yaml`.
 - **ImportError: No module named 'src'**: Run the script from the root directory: `python cli.py ...`
